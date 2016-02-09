@@ -25,7 +25,8 @@ module Voicemail
     end
 
     def record_message
-      @recording = record record_options
+      record_options_hash = record_options
+      @recording = record record_options_hash.merge!({:max_duration => record_options_hash[:voicemail_and_qa_max_duration]})
 
       config.allow_rerecording ? recording_menu : save_recording
     end

@@ -33,6 +33,7 @@ module Voicemail
 
       desc "Default recording options"
       recording {
+        voicemail_and_qa_max_duration 120
         interruptible true, desc: "Whether you can stop the recording with a DTMF input"
         direction :send, desc: "The direction to record; you probably want :send"
         final_timeout 2, desc: "Maximum duration to run after recording in seconds"
